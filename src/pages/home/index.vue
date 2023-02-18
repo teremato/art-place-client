@@ -11,5 +11,8 @@ export default defineComponent({
     name: 'view-home'
 })
 </script>
-<style module src="styles.scss">
+<style 
+    lang="scss"
+    module
+    src="./styles.scss">
 </style>

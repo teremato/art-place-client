@@ -1,4 +1,4 @@
-import Card from 'shared/ui/card/ui-card.vue'
+import Card from './card/ui-card.vue'
 
 
 export { Card };
