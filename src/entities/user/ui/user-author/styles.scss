@@ -5,15 +5,14 @@
     gap: 10px;
 
     img {
-        width: 32px;
-        height: 32px;
-        border: 50%;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
     }
     .info {
 
         display: flex;
         flex-direction: column;
-        gap: 5px;
 
         .name {
             font-size: 13px;

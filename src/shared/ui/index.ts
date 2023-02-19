@@ -1,4 +1,7 @@
-import Card from './card/ui-card.vue'
+import Card from './card/UiCard.vue';
+import Image from './image/UiImage.vue';
 
-
-export { Card };
+export { 
+    Card,
+    Image
+};

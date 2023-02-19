@@ -1,6 +1,6 @@
 <template>
     <div :class="$style.author_item">
-        <img :src="author.avatar.mini">
+        <img :src="author.avatar.default">
         <div :class="$style.info">
             <span :class="$style.name">
                 {{ author.name }}
@@ -18,7 +18,7 @@ interface Props {
     author: Author
 }
 
-const author = defineProps<Props>()
+defineProps<Props>()
 
 </script>
 

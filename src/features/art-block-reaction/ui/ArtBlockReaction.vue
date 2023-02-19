@@ -8,7 +8,7 @@
         </button>
         <button @click="setFavorite"
             class="btn"
-            :class="{ 'active': isFavorite }" >
+            :class="{ 'btn-active': isFavorite }" >
             
             <span class="material-icons">bookmark_border</span>
         </button>
@@ -24,7 +24,7 @@ interface Props {
     isFavorite: boolean | null,
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 const emit = defineEmits<{
     (e: 'art:like'): void,
     (e: 'art:favorite'): void

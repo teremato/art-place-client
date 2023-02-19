@@ -3,9 +3,16 @@
         <art-card :media="artBlock.mainPhoto">
             <template #header>
                 <h4>{{ artBlock.title }}</h4>
+                <art-block-options/>
             </template>
             <template #user>
-                <user-author :author="artBlock.author"/>
+                <user-author :author="artBlock.author">
+                    <template #desc>
+                        <span :class="$style.created_at">
+                            {{ artBlock.created_at }}
+                        </span>
+                    </template>
+                </user-author>
             </template>
             <template #events>
                 <art-block-reaction 
@@ -21,6 +28,7 @@
 import { defineProps } from 'vue'
 import { ArtCard } from '@/entities/art';
 import { ArtBlockReaction } from '@/features/art-block-reaction';
+import { ArtBlockOptions } from '@/features/art-block-options';
 import { UserAuthor } from '@/entities/user'
 import { Card } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
@@ -33,6 +41,8 @@ defineProps<Props>();
 
 </script>
 
-<style scoped>
-
+<style 
+    lang="scss"
+    module
+    src="./styles.scss" >
 </style>

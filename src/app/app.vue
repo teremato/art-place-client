@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view/>
     </div>
 </template>
 
@@ -7,5 +8,5 @@
 
 </script>
 
-<style lang="scss" src="app/index.scss">
+<style lang="scss" src="./index.scss">
 </style>
