@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { AppHeader } from '@/widgets/header';
+import { AppHeader } from '@/widgets/app-header';
 
 </script>
 

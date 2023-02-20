@@ -1,6 +1,8 @@
 .app-container {
-    width: 1200px;
+    min-width: 350px;
+    max-width: 1200px;
 }
 .container {
-    width: 750px;
+    min-width: 350px;
+    max-width: 750px;
 }
