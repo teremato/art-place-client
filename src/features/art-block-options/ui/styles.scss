@@ -1,0 +1,42 @@
+.art__block-options {
+    position: relative;
+}
+.options_list-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;;
+    z-index: 99;
+}
+.options_list {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    &-item {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+    }
+}
+.option-name {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.dropdown_open {
+    @keyframes open {
+        from { opacity: 0%; }
+        to { opacity: 100%; }
+    }
+    animation: open .3s forwards;
+}
+.dropdown_close {
+    @keyframes close {
+        from { opacity: 100%; }
+        to { opacity: 0%; }
+    }
+    animation: close .2s forwards;
+}

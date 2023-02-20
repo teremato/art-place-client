@@ -1,5 +1,8 @@
 <template>
-    <div :class="$style.home">
+    <div class="home app-container">
+        <ArtBlock :art-block="mock"/>
+        <ArtBlock :art-block="mock"/>
+        <ArtBlock :art-block="mock"/>
         <ArtBlock :art-block="mock"/>
         <ArtBlock :art-block="mock"/>
         <ArtBlock :art-block="mock"/>
@@ -41,6 +44,6 @@ const mock: Art = {
 </script>
 <style 
     lang="scss"
-    module
+    scoped
     src="./styles.scss">
 </style>

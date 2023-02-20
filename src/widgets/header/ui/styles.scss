@@ -1,0 +1,23 @@
+.app__header {
+    margin-bottom: 40px;
+
+    .header__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        padding: 10px 0px;
+
+        border-bottom: 1px solid #e5e5e5;;
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    .header__bottom {
+        padding: 10px 0px;
+        margin: 0 auto;
+    }
+}
