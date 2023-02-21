@@ -6,14 +6,14 @@
                 <art-block-options/>
             </template>
             <template #user>
-                <user-author :author="artBlock.author">
+                <user-author id="idasad" :author="artBlock.author">
                     <template #desc>
                         <span :class="$style.created_at">
                             {{ artBlock.created_at }}
                         </span>
                     </template>
-                    <template #popup>
-                        <user-popup>
+                    <template #popup="{ isFocus }">
+                        <user-popup v-if="isFocus">
                             <template #author>
                                 <user-author :author="artBlock.author"/>
                             </template>
