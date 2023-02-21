@@ -1,3 +1,7 @@
-import UserAuthor from './ui/user-author/UserAuthor.vue'
+import UserAuthor from './ui/user-author/UserAuthor.vue';
+import UserPopup from './ui/user-popup/UserPopup.vue';
 
-export { UserAuthor };
+export { 
+    UserAuthor,
+    UserPopup
+};

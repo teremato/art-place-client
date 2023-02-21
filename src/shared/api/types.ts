@@ -1,3 +1,5 @@
+import { ArtTypes } from "@/entities/art"
+
 export type User = {
     id: number,
     name: string,
@@ -12,7 +14,10 @@ export type Author = {
     id: number,
     name: string,
     avatar: Media,
-    isSubscribe: boolean | null
+    subscribeCount: number,
+    commonLikes: number,
+    commonWatch: number,
+    isSubscribe: boolean | null,
 }
 
 export type Art = {
@@ -20,8 +25,11 @@ export type Art = {
     author: Author,
     title: string,
     text: string,
+    type: ArtTypes,
     mainPhoto: Media,
     media: Media[],
+    likesCount: number,
+    watchCount: number,
     isLike: boolean | null,
     isFavorite: boolean | null,
     created_at: string,

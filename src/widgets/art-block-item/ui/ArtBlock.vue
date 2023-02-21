@@ -12,6 +12,16 @@
                             {{ artBlock.created_at }}
                         </span>
                     </template>
+                    <template #popup>
+                        <user-popup>
+                            <template #author>
+                                <user-author :author="artBlock.author"/>
+                            </template>
+                            <template #actions>
+                                <user-popup-actions/>
+                            </template>
+                        </user-popup>
+                    </template>
                 </user-author>
             </template>
             <template #events>
@@ -26,10 +36,11 @@
 
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { ArtCard } from '@/entities/art';
 import { ArtBlockReaction } from '@/features/art-block-reaction';
 import { ArtBlockOptions } from '@/features/art-block-options';
-import { UserAuthor } from '@/entities/user'
+import { UserPopupActions } from '@/features/user-popup-actions';
+import { ArtCard } from '@/entities/art';
+import { UserAuthor, UserPopup } from '@/entities/user';
 import { Card } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
 

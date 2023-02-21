@@ -1,12 +1,13 @@
 <template>
-    <div :class="$style.author_item">
+    <div class="author_item">
         <img :src="author.avatar.default">
-        <div :class="$style.info">
-            <span :class="$style.name">
+        <div class="info">
+            <span class="name">
                 {{ author.name }}
             </span>
             <slot name="desc"></slot>
         </div>
+        <slot name="popup"></slot>
     </div>
 </template>
 
@@ -25,5 +26,5 @@ defineProps<Props>()
 <style 
     lang="scss"
     src="./styles.scss"
-    module >
+    scoped >
 </style>

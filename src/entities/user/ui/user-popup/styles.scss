@@ -1,0 +1,19 @@
+.user-popup {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.user__popup-common-stats {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .common-stats-field {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-size: 13px;
+    } 
+}

@@ -15,7 +15,7 @@
             <header-search />
             <div class="header__bottom-chapters">
                 <template v-for="item in chapters" :key="item.event">
-                    <div class="chapter-item">
+                    <div class="chapter-item btn btn-s btn-hv-op">
                         <span class="material-icons">{{ item.icon }}</span>
                         <span>{{ item.title }}</span>
                     </div>

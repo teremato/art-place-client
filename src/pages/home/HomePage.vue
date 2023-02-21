@@ -11,10 +11,10 @@
 </template>
 
 <script setup lang="ts">
+import { ArtTypes } from '@/entities/art';
 import { Art } from '@/shared/api/types';
 import { ArtBlock } from '@/widgets/art-block-item';
 
-/** testing data */
 const mock: Art = {
     id: 1,
     author: {
@@ -29,6 +29,7 @@ const mock: Art = {
     },
     text: 'Прекрасный день для блога',
     title: 'Горный пейзаж',
+    type: ArtTypes.PHOTO,
     mainPhoto: {
         id: 3,
         default: 'https://cdn140.picsart.com/298996135426201.jpg',

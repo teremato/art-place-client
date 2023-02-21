@@ -33,8 +33,19 @@
     color: white;
 }
 
+.btn-hv-op {
+    transition: all .2s ease;
+    &:hover {
+        background-color: rgba($color: #b8c5cc, $alpha: 0.4);
+    }
+}
+
 .btn-s {
     padding: 5px;
+}
+
+.btn-auto {
+    width: 100%;
 }
 
 .btn-xl {

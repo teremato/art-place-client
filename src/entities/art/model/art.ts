@@ -5,6 +5,12 @@ interface IInitialState {
     arts: Art[],
 }
 
+export enum ArtTypes {
+    PHOTO = 'photo',
+    ILLUSTRATION = 'illustration',
+    GAME = 'game'
+}
+
 export enum ArtEmits {
     LIKE = 'art:like',
     FAVORITE = 'art:favorite',

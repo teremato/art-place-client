@@ -1,17 +1,16 @@
 <template>
-    <div :class="$style.reactions_block">
-        <button @click="setLike" 
-            class="btn"
+    <div class="reactions_block">
+        <div @click="setLike" 
+            class="likes-count"
             :class="{ 'active': isLike }" >
 
             <span class="material-icons">thumb_up_off_alt</span>
-        </button>
-        <button @click="setFavorite"
-            class="btn"
-            :class="{ 'btn-active': isFavorite }" >
-            
-            <span class="material-icons">bookmark_border</span>
-        </button>
+            <span class="count">6</span>
+    </div>
+        <div class="watch-count">
+            <span class="material-icons-outlined">remove_red_eye</span>
+            <span class="count">6</span>
+        </div>
     </div>
 </template>
 
@@ -27,16 +26,14 @@ interface Props {
 defineProps<Props>();
 const emit = defineEmits<{
     (e: 'art:like'): void,
-    (e: 'art:favorite'): void
 }>();
 
 const setLike = () => emit('art:like');
-const setFavorite = () => emit('art:favorite')
 
 </script>
 
 <style 
     lang="scss"
-    module
+    scoped
     src="./styles.scss" >
 </style>
