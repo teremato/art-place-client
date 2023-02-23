@@ -6,14 +6,19 @@
                 <art-block-options/>
             </template>
             <template #user>
-                <user-author id="idasad" :author="artBlock.author">
-                    <template #desc>
-                        <span :class="$style.created_at">
-                            {{ artBlock.created_at }}
-                        </span>
+                <popaver :custom-trigger="true">
+                    <template #button="{ trigger }">
+                        <user-author :author="artBlock.author"
+                            @avatar:click="trigger" >
+                            <template #desc>
+                                <span class="created_at">
+                                    {{ artBlock.created_at }}
+                                </span>
+                            </template>
+                        </user-author>
                     </template>
-                    <template #popup="{ isFocus }">
-                        <user-popup v-if="isFocus">
+                    <template #content>
+                        <user-popup>
                             <template #author>
                                 <user-author :author="artBlock.author"/>
                             </template>
@@ -22,7 +27,7 @@
                             </template>
                         </user-popup>
                     </template>
-                </user-author>
+                </popaver>
             </template>
             <template #events>
                 <art-block-reaction 
@@ -41,7 +46,7 @@ import { ArtBlockOptions } from '@/features/art-block-options';
 import { UserPopupActions } from '@/features/user-popup-actions';
 import { ArtCard } from '@/entities/art';
 import { UserAuthor, UserPopup } from '@/entities/user';
-import { Card } from '@/shared/ui';
+import { Card, Popaver } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
 
 interface Props {
@@ -54,6 +59,6 @@ defineProps<Props>();
 
 <style 
     lang="scss"
-    module
+    scoped
     src="./styles.scss" >
 </style>

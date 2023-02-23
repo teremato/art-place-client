@@ -1,10 +1,8 @@
 <template>
-    <div class="author_item"
-        :class="{ 'popaver-active': isFocus }" >
+    <div class="author_item" >
         
-        <img :src="author.avatar.default"
-            @mouseenter="focusPopaver"
-            @mouseleave="focusPopaver" >
+        <img @click="emit('avatar:click')"
+            :src="author.avatar.default">
 
         <div class="info">
             <span class="name">
@@ -12,12 +10,11 @@
             </span>
             <slot name="desc"></slot>
         </div>
-        <slot name="popup" :isFocus="isFocus"></slot>
     </div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, ref } from 'vue';
+import { defineProps } from 'vue';
 import { Author } from '@/shared/api/types';
 
 interface Props {
@@ -25,12 +22,9 @@ interface Props {
 }
 
 defineProps<Props>()
-
-const isFocus = ref<boolean>(false);
-
-const focusPopaver = () => {
-    isFocus.value = !isFocus.value;
-}
+const emit = defineEmits<{
+    (e: 'avatar:click'): void
+}>();
 
 </script>
 

@@ -1,26 +1,24 @@
 <template>
-    <div class="app-popaver">
-        <card>
-            <div class="user-popup">            
-                <slot name="author"></slot>
-                <div class="user__popup-common-stats">
-                    <div class="common-stats-field">
-                        <span class="material-icons">people_alt</span>
-                        <span class="count">0</span>
-                    </div>
-                    <div class="common-stats-field">
-                        <span class="material-icons">thumb_up_off_alt</span>
-                        <span class="count">0</span>
-                    </div>
-                    <div class="common-stats-field">
-                        <span class="material-icons-outlined">remove_red_eye</span>
-                        <span class="count">0</span>
-                    </div>
+    <card>
+        <div class="user-popup">            
+            <slot name="author"></slot>
+            <div class="user__popup-common-stats">
+                <div class="common-stats-field">
+                    <span class="material-icons">people_alt</span>
+                    <span class="count">0</span>
                 </div>
-                <slot name="actions"></slot>
+                <div class="common-stats-field">
+                    <span class="material-icons">thumb_up_off_alt</span>
+                    <span class="count">0</span>
+                </div>
+                <div class="common-stats-field">
+                    <span class="material-icons-outlined">remove_red_eye</span>
+                    <span class="count">0</span>
+                </div>
             </div>
-        </card>
-    </div>
+            <slot name="actions"></slot>
+        </div>
+    </card>
 </template>
 
 <script setup lang="ts">

@@ -1,0 +1,29 @@
+.app-popaver {
+    
+    position: relative;
+
+    &-target {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 99;
+
+        margin-top: 10px;
+    }
+}
+
+.app-popaver-active {
+    @keyframes open {
+        from { opacity: 0%; }
+        to { opacity: 100%; }
+    }
+    animation: open .3s forwards;
+}
+.app-popaver-disabled {
+    @keyframes close {
+        from { opacity: 100%; }
+        to { opacity: 0%; }
+    }
+    animation: close .2s forwards;
+    pointer-events: none;
+}
