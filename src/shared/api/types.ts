@@ -6,8 +6,12 @@ export type User = {
     email: string,
     avatar: Media,
     role: string,
-    description: string,
-    isSubscribe: boolean | null
+    direction: string,
+    isSubscribe: boolean | null,
+    subscribeCount: number,
+    commonLikes: number,
+    commonWatch: number,
+    created_at: string
 }
 
 export type Author = {

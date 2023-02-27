@@ -1,20 +1,28 @@
 <template>
-    <div :class="$style.ui_image">
-        <div v-show="!isLoad" :class="$style.empty_block"></div>
+    <div class="ui_image">
+        <div v-show="!isLoad" class="empty_block"
+            :class="{ 'image-circle': circle }" >
+        </div>
         <img @load="imageLoad" :src="src"
-            :class="(!isLoad) ? $style.load_image : ''" >
+            :class="[
+                (!isLoad) ? 'load_image' : '',
+                (circle) ? 'image-circle' : '' ]" >
 
     </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, withDefaults } from 'vue';
 
 
 interface Props { 
-    src: string
+    src: string,
+    circle: boolean
 }
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+    src: '',
+    circle: false
+});
 
 const isLoad = ref<boolean>(false);
 
@@ -30,6 +38,6 @@ const imageLoad = (event: Event) => {
 
 <style 
     lang="scss"
-    module
+    scoped
     src="./styles.scss" >
 </style>
