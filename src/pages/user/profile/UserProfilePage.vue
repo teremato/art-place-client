@@ -16,7 +16,15 @@
                 </button>
             </div>
             <div class="user__profile-content">
-                
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
+                <art-profile :art="ArtBlockMock"/>
             </div>
         </div>
     </div>
@@ -24,7 +32,8 @@
 
 <script setup lang="ts">
 import { UserProfileBlock } from '@/widgets/user-profile-block';
-
+import { ArtProfile } from '@/entities/art';
+import { mock as ArtBlockMock } from '@/shared/mock/ArtBlockMock';
 
 </script>
 

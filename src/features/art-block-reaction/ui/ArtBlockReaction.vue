@@ -1,12 +1,12 @@
 <template>
-    <div class="reactions_block">
+    <div class="reactions_block" :class="customClass">
         <div @click="setLike" 
             class="likes-count"
-            :class="{ 'active': isLike }" >
+            :class="{ 'active': isLike }">
 
             <span class="material-icons">thumb_up_off_alt</span>
             <span class="count">6</span>
-    </div>
+        </div>
         <div class="watch-count">
             <span class="material-icons-outlined">remove_red_eye</span>
             <span class="count">6</span>
@@ -21,9 +21,13 @@ interface Props {
     artId: number,
     isLike: boolean | null,
     isFavorite: boolean | null,
+    customClass?: string
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+    customClass: 'color-text'
+});
+
 const emit = defineEmits<{
     (e: 'art:like'): void,
 }>();

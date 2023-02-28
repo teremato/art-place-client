@@ -1,5 +1,4 @@
 import { RouteRecordRaw } from "vue-router";
-// import HomePage from '@/pages/home/HomePage.vue';
 
 export const routes: RouteRecordRaw[] = [
     {
@@ -8,6 +7,10 @@ export const routes: RouteRecordRaw[] = [
     },
     {
         path: '/profile/:id',
-        component: () => import('@/pages/user-profile/UserProfilePage.vue')
+        component: () => import('@/pages/user/profile/UserProfilePage.vue')
+    },
+    {
+        path: '/art/create/:id',
+        component: () => import('@/pages/art/create/ArtCreatePage.vue')
     }
 ]

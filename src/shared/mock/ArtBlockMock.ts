@@ -25,7 +25,7 @@ export const mock: Art = {
         mini: 'https://cdn140.picsart.com/298996135426201.jpg'
     },
     media: [],
-    isLike: false,
+    isLike: true,
     isFavorite: true,
     likesCount: 0,
     watchCount: 0,
