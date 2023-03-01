@@ -10,7 +10,7 @@ export const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/user/profile/UserProfilePage.vue')
     },
     {
-        path: '/art/create/:id',
+        path: '/art/create',
         component: () => import('@/pages/art/create/ArtCreatePage.vue')
     }
 ]

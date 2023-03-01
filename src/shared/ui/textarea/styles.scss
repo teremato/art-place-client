@@ -1,0 +1,19 @@
+.ui__textarea {
+
+    padding: 5px;
+    border-radius: 5px;
+    border: $app_border;
+
+    textarea {
+        width: 100%;
+        height: auto;
+
+        overflow: hidden;
+
+        border: none;
+        outline: none;
+        resize: none;
+
+        transition: all .2s ease;
+    }
+}
