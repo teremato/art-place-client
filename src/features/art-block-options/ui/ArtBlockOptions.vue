@@ -1,14 +1,14 @@
 <template>
     <div class="art__block-options">
 
-        <popaver :custom-trigger="false">
+        <app-popaver :custom-trigger="false">
             <template #button>
                 <button class="btn">
                     <span class="material-icons">dehaze</span>
                 </button>
             </template>
             <template #content>
-                <card>
+                <app-card>
                     <div class="options_list">
                         <template v-for="item in userOptions" :key="item.name">
                             <div @click="optionAction(item.event)"
@@ -22,14 +22,14 @@
                             </div>
                         </template>
                     </div>
-                </card>
+                </app-card>
             </template>
-        </popaver>
+        </app-popaver>
     </div>
 </template>
 
 <script setup lang="ts">
-import { Card, Popaver } from '@/shared/ui';
+import { AppCard, AppPopaver } from '@/shared/ui';
 import { ArtEmits } from '@/entities/art';
 import { 
     userOptions,

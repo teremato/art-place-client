@@ -1,5 +1,5 @@
 <template>
-    <card>
+    <app-card>
         <art-card :media="artBlock.mainPhoto">
             <template #header>
                 <h4>{{ artBlock.title }}</h4>
@@ -36,7 +36,7 @@
                     :is-favorite="artBlock.isFavorite" />
             </template>
         </art-card>
-    </card>
+    </app-card>
 </template>
 
 <script setup lang="ts">
@@ -46,7 +46,7 @@ import { ArtBlockOptions } from '@/features/art-block-options';
 import { UserPopupActions } from '@/features/user-popup-actions';
 import { ArtCard } from '@/entities/art';
 import { UserAuthor, UserPopup } from '@/entities/user';
-import { Card, Popaver } from '@/shared/ui';
+import { AppCard, Popaver } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
 
 interface Props {

@@ -1,13 +1,15 @@
-import Card from './card/UiCard.vue';
-import Image from './image/UiImage.vue';
-import Popaver from './popaver/UiPopaver.vue';
-import Input from './input/UiInput.vue';
-import TextArea from './textarea/UiTextArea.vue';
+import AppCard from './app-card/AppCard.vue';
+import AppImage from './app-image/AppImage.vue';
+import AppPopaver from './app-popaver/AppPopaver.vue';
+import AppInput from './app-input/AppInput.vue';
+import AppTextArea from './app-textarea/AppTextArea.vue';
+import AppSelect from './app-select/AppSelect.vue';
 
 export { 
-    Card,
-    Image,
-    Popaver,
-    Input,
-    TextArea
+    AppCard,
+    AppImage,
+    AppPopaver,
+    AppInput,
+    AppTextArea,
+    AppSelect
 };

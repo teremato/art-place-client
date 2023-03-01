@@ -14,7 +14,7 @@
 
                     <span class="material-icons">bookmark_border</span>
                 </button>
-                <Image :src="media.default" />
+                <app-image :src="media.default" />
             </div>
         </div>
         <div :class="$style.art_block_footer">
@@ -26,7 +26,7 @@
 
 <script setup lang="ts">
 import { Media } from '@/shared/api/types';
-import { Image } from '@/shared/ui';
+import { AppImage } from '@/shared/ui';
 import { ref } from 'vue';
 
 interface Props {

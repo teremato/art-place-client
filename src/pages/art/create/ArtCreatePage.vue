@@ -1,8 +1,16 @@
 <template>
     <div class="art__create-page app-container">
         <div class="create-page_left">
-            <Input v-model:model-value="form.title"/>
-            <TextArea v-model:model-value="form.text"/>
+            <app-input v-model:model-value="form.title"/>
+            <app-text-area v-model:model-value="form.text" :max-rows="5"/>
+            <app-select :options="select">
+                <template #current="{ current }">
+                    <div>{{ current }}</div>
+                </template>
+                <template #option="{ option }">
+                    <div>{{ option.name }}</div>
+                </template>
+            </app-select>
         </div>
         <div class="create-page_right">
 
@@ -12,12 +20,27 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-import { Input, TextArea } from '@/shared/ui';
+import { 
+    AppInput,
+    AppTextArea,
+    AppSelect
+} from '@/shared/ui';
 
 interface Form {
     title: string,
     text: string
 }
+
+interface Itest {
+    name: string,
+    age: number
+}
+
+const select: Itest[] = [
+    { name: 'df', age: 1 },
+    { name: 'df', age: 3 },
+
+]
 
 const form = reactive<Form>({
     title: '',
@@ -25,11 +48,11 @@ const form = reactive<Form>({
 });
 
 /**
- * title field,
- * text field,
+ * title field, \/
+ * text field, \/
  * main photo,
  * photos
- * type select
+ * type select \/
 */
 </script>
 

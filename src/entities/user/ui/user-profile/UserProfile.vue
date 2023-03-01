@@ -3,7 +3,7 @@
         <div class="user__profile-main">
             <div class="user__profile-main-avatar">
                 <div class="avatar-block">
-                    <Image :src="user.avatar.mini" :circle="true"/>
+                    <app-image :src="user.avatar.mini" :circle="true"/>
                 </div>
             </div>
             <div class="user__profile-main-bio">
@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { User } from '@/shared/api/types';
-import { Image } from '@/shared/ui';
+import { AppImage } from '@/shared/ui';
 
 interface Props {
     user: User

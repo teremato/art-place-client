@@ -1,5 +1,5 @@
 <template>
-    <card>
+    <app-card>
         <user-profile :user="userMock">
             <template #actions>
                 <div class="user__profile-actions">
@@ -12,13 +12,13 @@
                 </div>
             </template>
         </user-profile>
-    </card>
+    </app-card>
 </template>
 
 <script setup lang="ts">
 import { UserProfile } from '@/entities/user';
 import { userMock } from '@/shared/mock/UserMock';
-import { Card } from '@/shared/ui';
+import { AppCard } from '@/shared/ui';
 
 
 </script>

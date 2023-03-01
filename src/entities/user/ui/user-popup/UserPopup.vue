@@ -1,5 +1,5 @@
 <template>
-    <card>
+    <app-card>
         <div class="user-popup">            
             <slot name="author"></slot>
             <div class="user__popup-common-stats">
@@ -18,11 +18,11 @@
             </div>
             <slot name="actions"></slot>
         </div>
-    </card>
+    </app-card>
 </template>
 
 <script setup lang="ts">
-import { Card } from '@/shared/ui';
+import { AppCard } from '@/shared/ui';
 
 </script>
 

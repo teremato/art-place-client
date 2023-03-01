@@ -4,7 +4,7 @@
             @input="autoSize"
             :placeholder="placeholder"
             :maxlength="maxLenght"
-            :maxRows="maxRows"
+            :rows="maxRows"
             spellcheck="false" />
     </div>
 </template>
