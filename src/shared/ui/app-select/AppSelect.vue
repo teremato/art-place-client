@@ -19,13 +19,16 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
-
 interface Props {
     options: any[]
 }
+
 const props = withDefaults(defineProps<Props>(), {
     options: () => []
 });
+const emit = defineEmits<{
+    <T>(e: 'update:modelValue', currentOption: T): T
+}>();
 
 const current = ref<object | number | string>('');
 const isActive = ref<boolean>(false);
@@ -38,6 +41,8 @@ const openSelect = () => {
 const handleChoose = (item: string | object | number) => {
     current.value = item;
     isActive.value = false;
+
+    emit('update:modelValue', current.value);
 }
 
 </script>

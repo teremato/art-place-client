@@ -4,6 +4,7 @@ import AppPopaver from './app-popaver/AppPopaver.vue';
 import AppInput from './app-input/AppInput.vue';
 import AppTextArea from './app-textarea/AppTextArea.vue';
 import AppSelect from './app-select/AppSelect.vue';
+import AppImageUploader from './app-image-uploader/AppImageUploader.vue';
 
 export { 
     AppCard,
@@ -11,5 +12,6 @@ export {
     AppPopaver,
     AppInput,
     AppTextArea,
-    AppSelect
+    AppSelect,
+    AppImageUploader
 };

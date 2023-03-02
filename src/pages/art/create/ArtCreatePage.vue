@@ -1,9 +1,9 @@
 <template>
     <div class="art__create-page app-container">
         <div class="create-page_left">
-            <app-input v-model:model-value="form.title"/>
-            <app-text-area v-model:model-value="form.text" :max-rows="5"/>
-            <app-select :options="select">
+            <app-input v-model="form.title"/>
+            <app-text-area v-model="form.text" :max-rows="5"/>
+            <app-select v-model="form.category" :options="select">
                 <template #current="{ current }">
                     <div>{{ current }}</div>
                 </template>
@@ -11,6 +11,7 @@
                     <div>{{ option.name }}</div>
                 </template>
             </app-select>
+            <app-image-uploader/>
         </div>
         <div class="create-page_right">
 
@@ -23,12 +24,14 @@ import { reactive } from 'vue';
 import { 
     AppInput,
     AppTextArea,
-    AppSelect
+    AppSelect,
+    AppImageUploader
 } from '@/shared/ui';
 
 interface Form {
     title: string,
-    text: string
+    text: string,
+    category: string
 }
 
 interface Itest {
@@ -39,12 +42,12 @@ interface Itest {
 const select: Itest[] = [
     { name: 'df', age: 1 },
     { name: 'df', age: 3 },
-
 ]
 
 const form = reactive<Form>({
     title: '',
-    text: ''
+    text: '',
+    category: ''
 });
 
 /**
