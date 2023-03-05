@@ -5,6 +5,7 @@ import AppInput from './app-input/AppInput.vue';
 import AppTextArea from './app-textarea/AppTextArea.vue';
 import AppSelect from './app-select/AppSelect.vue';
 import AppImageUploader from './app-image-uploader/AppImageUploader.vue';
+import AppMultiplayUploader from './app-multiplay-uploader/AppMultiplayUploader.vue';
 
 export { 
     AppCard,
@@ -13,5 +14,6 @@ export {
     AppInput,
     AppTextArea,
     AppSelect,
-    AppImageUploader
+    AppImageUploader,
+    AppMultiplayUploader
 };

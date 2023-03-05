@@ -1,0 +1,14 @@
+.app__multiplay-upload {
+
+    .button_upload {
+
+        label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+    input {
+        display: none;
+    }
+}

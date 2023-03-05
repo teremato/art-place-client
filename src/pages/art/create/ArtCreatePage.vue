@@ -1,19 +1,45 @@
 <template>
-    <div class="art__create-page app-container">
-        <div class="create-page_left">
-            <app-input v-model="form.title"/>
-            <app-text-area v-model="form.text" :max-rows="5"/>
-            <app-select v-model="form.category" :options="select">
-                <template #current="{ current }">
-                    <div>{{ current }}</div>
-                </template>
-                <template #option="{ option }">
-                    <div>{{ option.name }}</div>
-                </template>
-            </app-select>
-            <app-image-uploader/>
+    <div class="art__create-page container">
+        <div class="art__create-page-header">
+            <h2>Создайте сообственную Арт-блог!</h2>
+            <div class="art__create-page-actions">
+                <button @click="getData" class="btn btn-bl btn-xl">
+                    Сохранить
+                </button>
+                <button class="btn btn-bl btn-xl">
+                    Отменить
+                </button>
+            </div>
         </div>
-        <div class="create-page_right">
+        <div class="art__create-page-form">
+            <div class="create-page-left">
+
+                <app-image-uploader v-model="form.mainPhoto"
+                    label="Выберите обложку"/>
+
+                <app-input v-model="form.title"
+                    label="Заголовок"
+                    placeholder="Например - Море" />
+
+                <app-text-area v-model="form.text"
+                    label="Описание"
+                    placeholder="Описание вашей статьи"
+                    :max-rows="5" />
+
+                <app-select v-model="form.type" 
+                    :options="selectCategory"
+                    label="Категория" >
+                    
+                    <template #current="{ current }">
+                        <div class="current-option">{{ current }}</div>
+                    </template>
+                    <template #option="{ option }">
+                        <div class="option">{{ option }}</div>
+                    </template>
+                </app-select>
+            </div>
+        </div>
+        <div class="art__create-page-footer">
 
         </div>
     </div>
@@ -31,32 +57,26 @@ import {
 interface Form {
     title: string,
     text: string,
-    category: string
+    type: string,
+    mainPhoto: File | null,
+    photos: File[] | null
 }
 
-interface Itest {
-    name: string,
-    age: number
-}
-
-const select: Itest[] = [
-    { name: 'df', age: 1 },
-    { name: 'df', age: 3 },
+const selectCategory: string[] = [
+    'Фото', 'Иллюстрация', 'Игры'
 ]
+
+const getData = () => {
+    console.log(form.mainPhoto);
+}
 
 const form = reactive<Form>({
     title: '',
     text: '',
-    category: ''
+    type: '',
+    mainPhoto: null,
+    photos: []
 });
-
-/**
- * title field, \/
- * text field, \/
- * main photo,
- * photos
- * type select \/
-*/
 </script>
 
 <style

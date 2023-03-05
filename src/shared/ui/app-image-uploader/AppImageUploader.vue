@@ -1,22 +1,21 @@
 <template>
-    <div class="ui__image-upload">
-        <div v-if="isFile" class="remove-image">
+    <div class="ui__image-uploader">
+        <div v-if="isFile" class="image-preview">
             <button class="btn btn-blc-op btn-s" @click="removeImage">
                 <span class="material-icons">close</span>
             </button>
+            <img :src="createFakeUrl(file)">
         </div>
-        <div v-if="isFile" class="image-wrapper">
-            <img :src="createFakeUrl(file)" alt="">
-        </div>
-        <div v-else class="upload-wrapper">
-            <label for="image_load">
+        <label v-else for="file-upld">
+            <div class="uploader-label">
+                <span>{{ label }}</span>
                 <span class="material-icons">image</span>
-            </label>
-            <input @change="uploadImage" 
-                id="image_load"
-                multiple="false"
-                type="file">
-        </div>
+            </div>
+        </label>
+        <input @change="uploadImage" 
+            type="file"
+            id="file-upld"
+            multiple="false">
     </div>
 </template>
 
@@ -24,7 +23,8 @@
 import { ref, computed } from 'vue';
 
 interface Props {
-    modelValue?: null | File 
+    modelValue?: null | File,
+    label: string
 }
 
 defineProps<Props>();
@@ -45,14 +45,14 @@ const uploadImage = (event: Event) => {
 }
 const removeImage = () => {
     file.value = null;
+    emit('update:modelValue', file.value);
 }
 const createFakeUrl = (file: File | null): string => {
     return (file) ? URL.createObjectURL(file) : '';
 }
-
 </script>
 
-<style
+<style 
     lang="scss"
     scoped
     src="./styles.scss" >

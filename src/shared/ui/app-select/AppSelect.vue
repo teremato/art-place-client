@@ -1,6 +1,6 @@
 <template>
     <div class="ui__select-wrapper">
-
+        <h3 v-if="label">{{ label }}</h3>
         <div class="ui__select" :class="{'select-active-wrapper': isActive}">
             <div class="select-main" @click="openSelect">
                 <slot name="current" :current="current"></slot>
@@ -19,12 +19,15 @@
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
 
+
 interface Props {
-    options: any[]
+    options: object[] | string[] | number[],
+    label?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-    options: () => []
+    options: () => [],
+    label: ''
 });
 const emit = defineEmits<{
     <T>(e: 'update:modelValue', currentOption: T): T

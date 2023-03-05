@@ -1,16 +1,21 @@
-.iu__input {
-
-    position: relative;
-
-    border-radius: 5px;
-    border: $app_border;
-    padding: 5px;
-
-    input {
-
-        width: 100%;
-
-        border: none;
-        outline: none;
+.iu__input-wrapper {
+    h3 {
+        line-height: 22px;
+        margin: 5px 0px;
+    }
+    
+    .iu__input {
+    
+        border-radius: 5px;
+        border: $app_border;
+        padding: 5px;
+    
+        input {
+    
+            width: 100%;
+    
+            border: none;
+            outline: none;
+        }
     }
 }

@@ -1,11 +1,14 @@
 <template>
-    <div class="ui__textarea">
-        <textarea @change="updateValue"
-            @input="autoSize"
-            :placeholder="placeholder"
-            :maxlength="maxLenght"
-            :rows="maxRows"
-            spellcheck="false" />
+    <div class="ui__textarea-wrapper">
+        <h3 v-if="label">{{ label }}</h3>
+        <div class="ui__textarea">
+            <textarea @change="updateValue"
+                @input="autoSize"
+                :placeholder="placeholder"
+                :maxlength="maxLenght"
+                :rows="maxRows"
+                spellcheck="false" />
+        </div>
     </div>
 </template>
 <script setup lang="ts">
@@ -15,14 +18,16 @@ interface Props {
     maxRows?: number,
     maxLenght?: number,
     placeholder?: string,
-    resize?: boolean 
+    resize?: boolean,
+    label?: string
 }
 
 withDefaults(defineProps<Props>(), {
     resize: true,
     maxLenght: 800,
     maxRows: 2,
-    placeholder: 'Введите'
+    placeholder: 'Введите',
+    label: ''
 })
 
 const emits = defineEmits<{

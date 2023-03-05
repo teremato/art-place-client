@@ -1,9 +1,11 @@
 <template>
-    <div class="iu__input">
-        <div>{{ label }}</div>
-        <input @input="updateValue"
-            :type="type"
-            :placeholder="placeholder" >
+    <div class="iu__input-wrapper">
+        <h3 v-if="label">{{ label }}</h3>
+        <div class="iu__input">
+            <input @input="updateValue"
+                :type="type"
+                :placeholder="placeholder" >
+        </div>
     </div>
 </template>
 
