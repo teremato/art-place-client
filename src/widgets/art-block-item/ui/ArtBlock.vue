@@ -6,7 +6,7 @@
                 <art-block-options/>
             </template>
             <template #user>
-                <popaver :custom-trigger="true">
+                <app-popaver :custom-trigger="true">
                     <template #button="{ trigger }">
                         <user-author :author="artBlock.author"
                             @avatar:click="trigger" >
@@ -27,7 +27,7 @@
                             </template>
                         </user-popup>
                     </template>
-                </popaver>
+                </app-popaver>
             </template>
             <template #events>
                 <art-block-reaction 
@@ -46,7 +46,7 @@ import { ArtBlockOptions } from '@/features/art-block-options';
 import { UserPopupActions } from '@/features/user-popup-actions';
 import { ArtCard } from '@/entities/art';
 import { UserAuthor, UserPopup } from '@/entities/user';
-import { AppCard, Popaver } from '@/shared/ui';
+import { AppCard, AppPopaver } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
 
 interface Props {

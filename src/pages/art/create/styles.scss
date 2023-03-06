@@ -1,40 +1,19 @@
 .art__create-page {
     margin: 0 auto;
 
-    &-header { 
-        margin-bottom: 20px;
+    .header {
+
         display: flex;
         align-items: center;
         justify-content: space-between;
 
-        .art__create-page-actions {
+        .header-title {
+            margin: 20px 0px;
+        }
+        .header-actions {
             display: flex;
             align-items: center;
             gap: 10px;
-        }
-    }
-
-    &-form {
-
-        .create-page-left {
-            
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-
-            .current-option {
-                cursor: pointer;
-                padding: 5px;
-            }
-            .option {
-                cursor: pointer;
-                padding: 5px;
-                transition: .2s all ease;
-
-                &:hover {
-                    color: gray;
-                }
-            }
         }
     }
 }

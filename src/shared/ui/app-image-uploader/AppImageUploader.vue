@@ -1,5 +1,7 @@
 <template>
-    <div class="ui__image-uploader">
+    <div class="ui__image-uploader"
+        :class="{ 'uploader-empty': !isFile }" >
+
         <div v-if="isFile" class="image-preview">
             <button class="btn btn-blc-op btn-s" @click="removeImage">
                 <span class="material-icons">close</span>
