@@ -14,7 +14,7 @@
 <script setup lang="ts">
 
 interface Props {
-    modelValue: string,
+    modelValue?: string,
     maxRows?: number,
     maxLenght?: number,
     placeholder?: string,

@@ -12,7 +12,7 @@
 <script setup lang="ts">
 
 interface Props {
-    modelValue: string,
+    modelValue?: string,
     type?: string,
     placeholder?: string,
     label?: string,

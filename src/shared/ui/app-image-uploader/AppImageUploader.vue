@@ -24,7 +24,7 @@ import { ref, computed } from 'vue';
 
 interface Props {
     modelValue?: null | File,
-    label: string
+    label?: string
 }
 
 defineProps<Props>();
