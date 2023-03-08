@@ -34,6 +34,7 @@
                             </span>
                         </template>
                     </app-select>
+
                 </div>
                 <div class="art_form-top-right">
                     <app-image-uploader v-model="form.mainPhoto"
@@ -64,6 +65,7 @@
                                 
                         </template>
                     </draggable>
+                    
                 </div>
             </div>
         </form>
