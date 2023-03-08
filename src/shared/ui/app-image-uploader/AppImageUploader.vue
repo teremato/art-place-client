@@ -6,7 +6,7 @@
             <button class="btn btn-blc-op btn-s" @click="removeImage">
                 <span class="material-icons">close</span>
             </button>
-            <img :src="createFakeUrl(file)">
+            <img :src="MediaHelpers.createFakeURL(file)">
         </div>
         <label v-else for="file-upld">
             <div class="uploader-label">
@@ -23,6 +23,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue';
+import { MediaHelpers } from '@/shared/helpers';
 
 interface Props {
     modelValue?: null | File,
@@ -48,9 +49,6 @@ const uploadImage = (event: Event) => {
 const removeImage = () => {
     file.value = null;
     emit('update:modelValue', file.value);
-}
-const createFakeUrl = (file: File | null): string => {
-    return (file) ? URL.createObjectURL(file) : '';
 }
 </script>
 

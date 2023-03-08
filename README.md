@@ -25,3 +25,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Material icons
 Website https://marella.me/material-icons/demo/
+
+### Vue Draggable
+Website https://www.npmjs.com/package/vuedraggable/v/4.1.0

@@ -21,7 +21,7 @@ import { onMounted, ref } from 'vue';
 
 
 interface Props {
-    options: object[] | string[] | number[],
+    options: any[],
     label?: string
 }
 
@@ -32,8 +32,8 @@ const props = withDefaults(defineProps<Props>(), {
 const emit = defineEmits<{
     <T>(e: 'update:modelValue', currentOption: T): T
 }>();
-
-const current = ref<object | number | string>('');
+/** Понятие не имею как прокинуть дженерик на пропс */
+const current = ref<any>('');
 const isActive = ref<boolean>(false);
 
 onMounted(() => current.value = props.options[0]);

@@ -19,6 +19,11 @@ export enum ArtEmits {
     REMOVE = 'art:remove'
 }
 
+export enum ArtImageEmits {
+    REMOVE = 'image:remove',
+    TEXT_UPDATE = 'image:textUpdate'
+}
+
 const useArtsStore = defineStore('arts', {
     
 });

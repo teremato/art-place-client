@@ -7,6 +7,7 @@
                 :placeholder="placeholder"
                 :maxlength="maxLenght"
                 :rows="maxRows"
+                :value="modelValue"
                 spellcheck="false" />
         </div>
     </div>

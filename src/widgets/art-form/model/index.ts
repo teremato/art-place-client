@@ -1,11 +1,13 @@
 import { ArtTypes } from "@/entities/art";
+import { ArtImage } from "@/shared/api/types";
+import { MediaHelpers } from "@/shared/helpers";
 
 export interface IForm {
     title: string,
     text: string,
     type: string,
     mainPhoto: File | null,
-    photos: File[] | null
+    photos: ArtImage[] | null
 }
 interface ISelectType {
     name: string,
@@ -18,14 +20,10 @@ export const selectOptions: ISelectType[] = [
     { name: 'Игра', type: ArtTypes.GAME }
 ]
 
-export const createArt = (form: IForm) => {
-    return;
+export const createArtImage = (file: File): ArtImage => {
+    return {
+        file: file,
+        description: '',
+        timesURL: MediaHelpers.createFakeURL(file)
+    }
 }
-
-export const updateArt = (form: IForm) => {
-    return;
-}
-
-export const actionController = () => {
-    return;
-} 

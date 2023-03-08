@@ -4,27 +4,33 @@
             <div class="art-form-header">
                 <slot name="form-title"></slot>
                 <div class="art-form-header-actions">
-                    <button class="btn btn-bl btn-xl">Сохранить</button>
-                    <button class="btn btn-bl btn-xl">Удалить</button>
+                    <button class="btn btn-bl btn-xl">
+                        Сохранить
+                    </button>
+                    <button class="btn btn-bl btn-xl">
+                        Удалить
+                    </button>
                 </div>
             </div>
             <div class="art_form-top">
                 <div class="art_form-top-left">
+
                     <app-input v-model="form.title"
                         label="Заголовок"
                         placeholder="Например - Море" />
+
                     <app-select v-model="form.type" 
                         :options="selectOptions"
                         label="Категория" >
 
                         <template #current="{ current }">
                             <span class="current-option">
-                                {{ current }}
+                                {{ current.name }}
                             </span>
                         </template>
                         <template #option="{ option }">
                             <span class="option">
-                                {{ option }}
+                                {{ option.name }}
                             </span>
                         </template>
                     </app-select>
@@ -40,12 +46,24 @@
                     :max-rows="5" />
             </div>
             <div class="art_form-footer">
-                <app-multiplay-uploader v-model="form.photos"
+
+                <app-multiplay-uploader @update:model-value="addPhotos"
                     label="Добавить фото" />
-                <div class="multiplay-media">
-                    <template>
-                        
-                    </template>
+                    
+                <div v-if="form.photos" class="multiplay-media">
+
+                    <draggable v-model="form.photos"
+                        tag="transition-group"
+                        :component-data="{name:'fade'}" >
+
+                        <template #item="{ element, index }">
+                            <art-image-block :art-image="element" 
+                                :index="index"
+                                @image:text-update="updatePhotoText"
+                                @image:remove="removePhoto" />
+                                
+                        </template>
+                    </draggable>
                 </div>
             </div>
         </form>
@@ -54,17 +72,17 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
+import draggable from 'vuedraggable'
 import {
-    AppInput,
-    AppTextArea,
-    AppMultiplayUploader,
-    AppImageUploader,
+    AppInput, AppTextArea,
+    AppMultiplayUploader, AppImageUploader,
     AppSelect,
 } from '@/shared/ui';
-import {
-    selectOptions,
-    IForm,
-} from '@/widgets/art-form/model';
+
+import { ArtImageBlock } from '@/entities/art';
+import { createArtImage } from '@/widgets/art-form/model';
+
+import { selectOptions, IForm } from '@/widgets/art-form/model';
 
 const form = reactive<IForm>({
     title: '',
@@ -73,6 +91,23 @@ const form = reactive<IForm>({
     mainPhoto: null,
     photos: [],
 });
+
+const addPhotos = (files: File[]) => {
+    files.forEach((item) => {
+        const newImage = createArtImage(item);
+        form.photos?.push(newImage);
+    })
+}
+const removePhoto = (idx: number) => {
+    if(form.photos) {
+        form.photos = form.photos.filter((item, index) => idx !== index);
+    }
+}
+const updatePhotoText = (text: string, idx: number) => {
+    if(form.photos) {
+        form.photos[idx].description = text;
+    }
+}
 
 </script>
 

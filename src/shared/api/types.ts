@@ -45,3 +45,9 @@ export type Media = {
     default: string,
     mini: string
 }
+
+export type ArtImage = {
+    file: File,
+    description?: string,
+    timesURL: string
+}

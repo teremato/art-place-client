@@ -6,7 +6,8 @@
                 <span v-if="label">{{ label }}</span>
             </label>
         </div>
-        <input type="file" 
+        <input @change="uploadFiles"
+            type="file" 
             id="multiplay-uploader" 
             :multiple="true">
     </div>
@@ -21,6 +22,16 @@ interface Props {
 withDefaults(defineProps<Props>(), {
     label: ''
 });
+const emit = defineEmits<{
+    (e: 'update:modelValue', payload: File[]): File[],
+}>();
+
+const uploadFiles = (event: Event) => {
+    const el = event.target as HTMLInputElement;
+    const files = el.files as FileList;
+
+    emit('update:modelValue', [...files]);
+}
 
 </script>
 
