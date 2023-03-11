@@ -1,0 +1,26 @@
+.login__form {
+    padding: 20px;
+    width: 400px;
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    &-fields {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &-middle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        margin-top: 10px;
+    }
+
+    &-footer {
+        margin-top: 20px;
+    }
+}

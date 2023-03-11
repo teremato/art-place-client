@@ -16,5 +16,13 @@ export const routes: RouteRecordRaw[] = [
     {
         path: '/art/:id',
         component: () => import('@/pages/art/item/ArtItemPage.vue')
+    },
+    {
+        path: '/auth/register',
+        component: () => import('@/pages/auth/register/AuthRegisterPage.vue')
+    },
+    {
+        path: '/auth/login',
+        component: () => import('@/pages/auth/login/AuthLoginPage.vue')
     }
 ]

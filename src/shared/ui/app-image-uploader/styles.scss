@@ -53,3 +53,14 @@
     align-items: center;
     justify-content: center;
 }
+
+.circle-image {
+
+    border-radius: 50%;
+
+    .image-preview {
+        img {
+            border-radius: 50%;
+        }
+    }
+}

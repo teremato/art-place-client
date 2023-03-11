@@ -1,0 +1,23 @@
+.auth__register-page {
+    display: flex;
+    min-height: 100vh;
+
+    &-left {
+        width: 60%;
+        min-height: 100vh;
+
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        
+        background-image: url('@/shared/assets/auth-page-node.jpg');
+        background-size: cover;
+    }
+    &-right {
+        width: 40%;
+        min-height: 100vh;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

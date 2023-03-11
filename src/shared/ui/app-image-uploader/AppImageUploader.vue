@@ -1,9 +1,14 @@
 <template>
     <div class="ui__image-uploader"
-        :class="{ 'uploader-empty': !isFile }" >
+        :class="[
+            { 'uploader-empty': !isFile },
+            { 'circle-image': circle } ]" >
 
         <div v-if="isFile" class="image-preview">
-            <button class="btn btn-blc-op btn-s" @click="removeImage">
+            <button class="btn btn-blc-op btn-s"
+                :class="{ 'btn-circle': circle }"
+                @click="removeImage" >
+
                 <span class="material-icons">close</span>
             </button>
             <img :src="MediaHelpers.createFakeURL(file)">
@@ -27,10 +32,13 @@ import { MediaHelpers } from '@/shared/helpers';
 
 interface Props {
     modelValue?: null | File,
-    label?: string
+    label?: string,
+    circle?: boolean
 }
 
-defineProps<Props>();
+withDefaults(defineProps<Props>(), {
+    circle: false
+});
 const emit = defineEmits<{
     (e: 'update:modelValue', file: null | File): File
 }>();
