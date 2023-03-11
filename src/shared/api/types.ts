@@ -43,7 +43,8 @@ export type Art = {
 export type Media = {
     id: number,
     default: string,
-    mini: string
+    mini: string,
+    desc: string | null
 }
 
 export type ArtImage = {

@@ -1,6 +1,8 @@
 <template>
-    <div>
-
+    <div class="user__settings-wrapper container">
+        <div>
+            
+        </div>
     </div>
 </template>
 

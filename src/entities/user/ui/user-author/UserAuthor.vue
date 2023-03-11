@@ -1,5 +1,5 @@
 <template>
-    <div class="author_item" >
+    <div class="author_item" :class="size" >
         
         <img @click="emit('avatar:click')"
             :src="author.avatar.default">
@@ -14,17 +14,32 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
+import { defineProps, computed } from 'vue';
 import { Author } from '@/shared/api/types';
 
 interface Props {
     author: Author,
+    size?: string
 }
 
-defineProps<Props>()
+const SIZE_S = 'author_item-s';
+const SIZE_M = 'author_item-m';
+
+const props = withDefaults(defineProps<Props>(), {
+    size: ''
+});
 const emit = defineEmits<{
     (e: 'avatar:click'): void
 }>();
+
+const size = computed<string>(() => {
+    switch(props.size) {
+        case 'size-m':
+            return SIZE_M;
+        default:
+            return SIZE_S;
+    }
+});
 
 </script>
 

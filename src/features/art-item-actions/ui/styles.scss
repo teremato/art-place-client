@@ -1,0 +1,28 @@
+.art__block-actions {
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    
+
+    .popaver-content {
+        
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        padding: 10px;
+
+        .popaver-option {
+
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &:hover {
+                color: gray;
+            }
+        }
+    }
+}
