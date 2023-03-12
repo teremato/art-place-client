@@ -1,13 +1,13 @@
 <template>
     <div class="reactions_block" :class="customClass">
-        <div @click="setLike" 
+        <div @click="emit(ArtEmits.LIKE, artId)" 
             class="likes-count"
             :class="{ 'active': isLike }">
 
             <span class="material-icons">thumb_up_off_alt</span>
             <span class="count">6</span>
         </div>
-        <div class="watch-count">
+        <div @click="emit(ArtEmits.REMOVE, artId)" class="watch-count">
             <span class="material-icons-outlined">remove_red_eye</span>
             <span class="count">6</span>
         </div>
@@ -16,23 +16,23 @@
 
 <script setup lang="ts">
 import { defineEmits, defineProps } from 'vue'
+import { ArtEmits } from '@/entities/art';
 
-interface Props {
+interface IProps {
     artId: number,
     isLike: boolean | null,
     isFavorite: boolean | null,
     customClass?: string
 }
 
-withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<IProps>(), {
     customClass: 'color-text'
 });
 
 const emit = defineEmits<{
-    (e: 'art:like'): void,
+    (e: ArtEmits.LIKE, id: number ): number,
+    (e: ArtEmits.REMOVE, id: number): number
 }>();
-
-const setLike = () => emit('art:like');
 
 </script>
 

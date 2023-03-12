@@ -30,7 +30,8 @@
                 </app-popaver>
             </template>
             <template #events>
-                <art-block-reaction 
+                <art-block-reaction
+                    @art:like="(id) => emit(ArtEmits.LIKE, id)"
                     :art-id="artBlock.id"
                     :is-like="artBlock.isLike"
                     :is-favorite="artBlock.isFavorite" />
@@ -44,7 +45,7 @@ import { defineProps } from 'vue'
 import { ArtBlockReaction } from '@/features/art-block-reaction';
 import { ArtBlockOptions } from '@/features/art-block-options';
 import { UserPopupActions } from '@/features/user-popup-actions';
-import { ArtCard } from '@/entities/art';
+import { ArtCard, ArtEmits } from '@/entities/art';
 import { UserAuthor, UserPopup } from '@/entities/user';
 import { AppCard, AppPopaver } from '@/shared/ui';
 import { Art } from '@/shared/api/types';
@@ -52,6 +53,10 @@ import { Art } from '@/shared/api/types';
 interface Props {
     artBlock: Art
 }
+
+const emit = defineEmits<{
+    (e: ArtEmits.LIKE, id: number): number
+}>();
 
 defineProps<Props>();
 

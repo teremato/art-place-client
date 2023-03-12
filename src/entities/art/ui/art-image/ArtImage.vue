@@ -19,7 +19,7 @@
 
 <script setup lang="ts">
 import { AppTextArea } from '@/shared/ui';
-import { ArtImageEmits } from '../../model/art';
+import { ArtImageEmits } from '@/entities/art';
 import { ArtImage } from '@/shared/api/types';
 import { useDebounce } from '@/shared/hooks';
 

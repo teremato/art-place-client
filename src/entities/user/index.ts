@@ -7,3 +7,13 @@ export {
     UserPopup,
     UserProfile
 };
+
+import { changeSubscribe } from './model/userEvents';
+import useUser from './model/userStore';
+import useAuthUser from './model/authUserStore';
+
+export {
+    changeSubscribe,
+    useUser,
+    useAuthUser
+}
